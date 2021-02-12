@@ -16,10 +16,12 @@ const Navigation = () => {
 
   return (<Layout className="layout">
     <Header>
-      <Menu orientation="right" theme="dark" mode="horizontal">
+      <div style={{float: 'right'}}> 
+      <Menu theme="dark" mode="horizontal">
         {!isLoggedIn && <Menu.Item key="1">Signup</Menu.Item>}
         {!!isLoggedIn && <Menu.Item onClick={logout} key="1">Logout</Menu.Item>}
       </Menu>
+      </div>
     </Header>
   </Layout>
   )

@@ -15,7 +15,7 @@ const SignUp = () => {
     };
 
     return (
-      <Row justify="center">
+      <Row style={{ marginTop:50 }} justify="center">
          <Col span={6}>
         <Form
           name="sgignup"

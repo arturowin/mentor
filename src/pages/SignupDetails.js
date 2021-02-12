@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { useHistory } from "react-router-dom";
-import { Form, Input, Button, Col, Row } from 'antd';
+import { Form, Input, Button, Col, Row, Space } from 'antd';
 import {signupUser} from '../redux/auth/thunks';
 import useIsLogedIn from '../hooks/useIsLogedIn';
 import * as helpers from '../utils/helpers';
@@ -28,7 +28,7 @@ const SignupDetails = () => {
     };
     
     return (
-      <Row justify="center">
+      <Row style={{ marginTop:50 }} justify="center">
          <Col span={6}>
         <Form
           name="normal_login"
@@ -48,12 +48,14 @@ const SignupDetails = () => {
         >
           <Input placeholder="Years of experiance"/>
         </Form.Item>
+        <Space size="middle">
+        <Button type="primary" onClick={()=> history.push('/signup')} htmlType="button" className="prev-button">
+            Back
+        </Button>
         <Button type="primary" htmlType="submit" className="next-button">
             Submit
         </Button>
-        <Button type="primary" onClick={()=> history.push('/signup')} htmlType="button" className="prev-button">
-            Prev
-        </Button>
+        </Space>
       </Form>
       </Col>
       </Row>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import { Button, Col, Space, Row, Table } from 'antd';
+import { Button, Col, Row, Table } from 'antd';
 import { fetchEmployees, createGroup, fetchEmployeeGroups } from '../redux/employees/thunks';
 
 
@@ -81,7 +81,7 @@ const CreateGroup = () => {
     }
 
     return (
-      <Row justify="center">
+      <Row style={{ marginTop:50, marginBottom:500 }} justify="center">
       <Col span={12}>
           <Table
           pagination={false}
@@ -92,11 +92,11 @@ const CreateGroup = () => {
             columns={columns}
             dataSource={employees}
           />
-          <Space align="end">
-          <Button type="primary" onClick={create} htmlType="button" className="login-form-button">
-            Save
-        </Button>
-        </Space>
+          <div style={{float: 'right', marginTop: 40, marginBottom: 40}}>
+              <Button type="primary" onClick={create} htmlType="button">
+                Save
+            </Button>
+        </div>
       </Col>
       </Row>
     )
