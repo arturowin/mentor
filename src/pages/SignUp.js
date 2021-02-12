@@ -3,12 +3,19 @@ import {useDispatch, useSelector} from 'react-redux'
 import { useHistory } from "react-router-dom";
 import { Form, Input, Button, Col, Row } from 'antd';
 import {signupStepOne} from '../redux/auth/actions'
+import useIsLogedIn from '../hooks/useIsLogedIn';
 
 const SignUp = () => {
 
     const signupData = useSelector((state) => state.auth?.signupData);
+    const [isLogedin] = useIsLogedIn();
     const dispatch = useDispatch();
     const history = useHistory();
+
+    if(isLogedin) {
+      history.push('/create-group');
+    }
+
     const onFinish = (values) => {
       dispatch(signupStepOne(values))
       history.push('/signup-details')
