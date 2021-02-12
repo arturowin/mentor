@@ -8,7 +8,7 @@ const { Header } = Layout
 
 const Navigation = () => {
   const dispatch = useDispatch()
-  const [isLoggedIn] = useIsLoggedIn()
+  const isLoggedIn = useIsLoggedIn()
 
   const logout = () => {
     dispatch(logoutUser())

@@ -57,7 +57,7 @@ const CreateGroup = () => {
       dispatch(fetchEmployeeGroups());
     } else {
       const group = groups.find(g => g.userId === user.id);
-      setSelectedEmployeed(group.groups);
+      setSelectedEmployeed(group?.groups || []);
     }
   }, [groups.length]);
 

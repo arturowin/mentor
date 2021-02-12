@@ -11,7 +11,7 @@ const SignupDetails = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const signup = useSelector((state) => state.auth);
-    const [isLoggedIn] = useIsLogedIn();
+    const isLoggedIn = useIsLogedIn();
 
     if(!helpers.areAllSet(signup?.signupData)) {
           history.push('/signup')

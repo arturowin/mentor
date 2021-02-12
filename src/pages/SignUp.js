@@ -8,7 +8,7 @@ import useIsLogedIn from '../hooks/useIsLogedIn';
 const SignUp = () => {
 
     const signupData = useSelector((state) => state.auth?.signupData);
-    const [isLogedin] = useIsLogedIn();
+    const isLogedin = useIsLogedIn();
     const dispatch = useDispatch();
     const history = useHistory();
 

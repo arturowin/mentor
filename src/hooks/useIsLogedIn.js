@@ -2,7 +2,7 @@ import {useSelector} from 'react-redux';
 
 const useIsLoggedIn = () => {
     const loggedIn = useSelector(state => state.auth?.authToken);
-    return [loggedIn]
+    return loggedIn
 };
 
 export default useIsLoggedIn;
