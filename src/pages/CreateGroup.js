@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { Button, Col, Row, Table } from 'antd';
+import { useTranslation } from 'react-i18next';
 import { fetchEmployees, createGroup, fetchEmployeeGroups } from '../redux/employees/thunks';
 
 
@@ -44,13 +45,13 @@ const CreateGroup = () => {
     const groups = useSelector((state) => state.employee.groups);
     const user = useSelector((state) => state.auth?.user);
     const [selectedEmployees, setSelectedEmployeed] = useState([]);
+    const { t } = useTranslation();
 
     useEffect(() => {
       if(!employees.length){
         dispatch(fetchEmployees());
       }  
     },[employees.length]);
-
 
     useEffect(() => {
     if(!groups.length) {
@@ -83,6 +84,7 @@ const CreateGroup = () => {
     return (
       <Row style={{ marginTop:50, marginBottom:500 }} justify="center">
       <Col span={12}>
+      <h1>{t('welcome')}</h1>
           <Table
           pagination={false}
             rowSelection={{
