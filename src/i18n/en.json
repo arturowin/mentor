@@ -1,3 +1,5 @@
 {
-    "welcome": "Welcome to Mentor App"  
+    "welcome": "Welcome to Mentor App",
+    "logout": "Logout",
+    "signup": "Signup"
 }

@@ -11,7 +11,7 @@ const { Header } = Layout
 const Navigation = () => {
   const dispatch = useDispatch()
   const isLoggedIn = useIsLoggedIn();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [language, setLanguage] = useLocalStorage('language', 'en')
 
   const logout = () => {
@@ -29,8 +29,8 @@ const Navigation = () => {
       <Menu theme="dark" mode="horizontal">
         <Menu.Item onClick={() => changeLanguage('am')} key="2">Հայ</Menu.Item>
         <Menu.Item onClick={() => changeLanguage('en')} key="3">eng</Menu.Item>
-        {!isLoggedIn && <Menu.Item key="1">Signup</Menu.Item>}
-        {!!isLoggedIn && <Menu.Item onClick={logout} key="1">Logout</Menu.Item>}
+        {!isLoggedIn && <Menu.Item key="1">{t('signup')}</Menu.Item>}
+        {!!isLoggedIn && <Menu.Item onClick={logout} key="1">{t('logout')}</Menu.Item>}
       </Menu>
       </div>
     </Header>
